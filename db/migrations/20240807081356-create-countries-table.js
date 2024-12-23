@@ -2,7 +2,7 @@
 
 module.exports = {
   up(queryInterface, Sequelize) {
-    return queryInterface.createTable('Roles', {
+    return queryInterface.createTable('Countries', {
       id: {
         primaryKey: true,
         autoIncrement: true,
@@ -12,21 +12,27 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING,
         unique: true,
+        validate: {
+          notEmpty: true,
+        },
+      },
+      description: {
+        type: Sequelize.TEXT,
       },
       created_at: {
         allowNull: false,
-        defaultValue: Sequelize.fn('NOW'),
         type: Sequelize.DATE,
+        defaultValue: Sequelize.fn('NOW'),
       },
       updated_at: {
         allowNull: false,
-        defaultValue: Sequelize.fn('NOW'),
         type: Sequelize.DATE,
+        defaultValue: Sequelize.fn('NOW'),
       },
     });
   },
 
   down(queryInterface) {
-    return queryInterface.dropTable('Roles');
+    return queryInterface.dropTable('Countries');
   },
 };

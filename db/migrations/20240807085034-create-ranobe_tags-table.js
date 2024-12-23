@@ -3,7 +3,7 @@
 module.exports = {
   up(queryInterface, Sequelize) {
     return queryInterface.createTable('RanobeTags', {
-      post_id: {
+      ranobe_id: {
         primaryKey: true,
         type: Sequelize.INTEGER,
         references: {

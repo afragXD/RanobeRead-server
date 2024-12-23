@@ -66,7 +66,7 @@ module.exports = {
       translator_id: {
         type: Sequelize.INTEGER,
         references: {
-          model: 'Translators',
+          model: 'Authors',
           key: 'id',
         },
         onUpdate: 'CASCADE',
