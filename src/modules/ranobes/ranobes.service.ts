@@ -18,7 +18,7 @@ export class RanobesService {
       const topRanobe = await Ranobe.findAll({
         order: [['rating', 'DESC']],
         limit,
-        attributes: ['id', 'name', 'description', 'rating', 'image'],
+        attributes: ['id', 'name', 'rating', 'image'],
         include: [
           {
             model: Tag,
@@ -38,14 +38,7 @@ export class RanobesService {
       const topRanobe = await Ranobe.findAll({
         order: [['updatedAt', 'DESC']],
         limit,
-        attributes: [
-          'id',
-          'name',
-          'description',
-          'rating',
-          'image',
-          'updatedAt',
-        ],
+        attributes: ['id', 'name', 'description', 'rating', 'image', 'updatedAt'],
         include: [
           {
             model: Tag,
