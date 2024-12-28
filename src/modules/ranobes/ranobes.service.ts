@@ -19,14 +19,6 @@ export class RanobesService {
         order: [['rating', 'DESC']],
         limit,
         attributes: ['id', 'name', 'rating', 'image'],
-        include: [
-          {
-            model: Tag,
-            as: 'tags',
-            attributes: ['id', 'name'],
-            through: { attributes: [] },
-          },
-        ],
       });
       return topRanobe;
     } catch (error) {
